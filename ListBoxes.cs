@@ -31,20 +31,35 @@ namespace ListBoxes
             lstNumbers.DataSource = numbers;
             lblStatus.Text = "Status: numbers sorted";
         }
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void lblNewList_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 20; i++)
-                heroes.Add(generator.Next(100));
+
             lstHeroes.DataSource = heroes;
         }
-
         private void btnSortHeroes_Click(object sender, EventArgs e)
         {
             heroes.Sort();
             lstHeroes.DataSource = null;
             lstHeroes.DataSource = heroes;
             lblStatus.Text = "Status: heroes sorted";
+        }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void btnRemoveNumber_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnRemoveAllNumbers_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnAddHero_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnRemoveHero_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
