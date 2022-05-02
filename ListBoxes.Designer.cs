@@ -48,6 +48,8 @@
             this.txtRemoveHero = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnUpperCase = new System.Windows.Forms.Button();
+            this.btnLowerCase = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -260,10 +262,37 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.lblStatus);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(45, 298);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(270, 45);
+            this.panel1.Size = new System.Drawing.Size(390, 45);
             this.panel1.TabIndex = 20;
+            // 
+            // btnUpperCase
+            // 
+            this.btnUpperCase.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnUpperCase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpperCase.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnUpperCase.Location = new System.Drawing.Point(450, 90);
+            this.btnUpperCase.Name = "btnUpperCase";
+            this.btnUpperCase.Size = new System.Drawing.Size(91, 49);
+            this.btnUpperCase.TabIndex = 21;
+            this.btnUpperCase.Text = "Upper Case";
+            this.btnUpperCase.UseVisualStyleBackColor = false;
+            this.btnUpperCase.Click += new System.EventHandler(this.btnUpperCase_Click);
+            // 
+            // btnLowerCase
+            // 
+            this.btnLowerCase.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnLowerCase.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLowerCase.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnLowerCase.Location = new System.Drawing.Point(450, 145);
+            this.btnLowerCase.Name = "btnLowerCase";
+            this.btnLowerCase.Size = new System.Drawing.Size(91, 51);
+            this.btnLowerCase.TabIndex = 22;
+            this.btnLowerCase.Text = "Lower Case";
+            this.btnLowerCase.UseVisualStyleBackColor = false;
+            this.btnLowerCase.Click += new System.EventHandler(this.btnLowerCase_Click);
             // 
             // ListBoxes
             // 
@@ -271,6 +300,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLowerCase);
+            this.Controls.Add(this.btnUpperCase);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtRemoveHero);
             this.Controls.Add(this.txtAddHero);
@@ -322,6 +353,8 @@
         private System.Windows.Forms.TextBox txtRemoveHero;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnUpperCase;
+        private System.Windows.Forms.Button btnLowerCase;
     }
 }
 
