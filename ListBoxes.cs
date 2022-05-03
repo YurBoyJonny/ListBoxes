@@ -35,7 +35,9 @@ namespace ListBoxes
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void lblNewList_Click(object sender, EventArgs e)
         {
-
+            heroes.Add("Superman");
+            heroes.Add("Batman");
+            lstHeroes.DataSource = null;
             lstHeroes.DataSource = heroes;
             lblStatus.Text = "Status: new heroes list";
         }
@@ -49,24 +51,37 @@ namespace ListBoxes
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void btnRemoveNumber_Click(object sender, EventArgs e)
         {
-
-            List<int> numberChosen = numbers;
-
+            numbers.RemoveAt(lstNumbers.SelectedIndex);
+            lstNumbers.DataSource = null;
+            lstNumbers.DataSource = numbers;
             lblStatus.Text = "Status: number removed";
         }
         private void btnRemoveAllNumbers_Click(object sender, EventArgs e)
         {
 
+
+            numbers.Remove((Int32)lstNumbers.SelectedItem);
+            lstNumbers.DataSource = null;
+            lstNumbers.DataSource = numbers;
             lblStatus.Text = "Status: all " + "numberChosen" + " removed";
         }
         private void btnAddHero_Click(object sender, EventArgs e)
         {
+
 
             txtAddHero.Clear();
             lblStatus.Text = "Status: hero added";
         }
         private void btnRemoveHero_Click(object sender, EventArgs e)
         {
+
+
+            heroes.RemoveAt(lstHeroes.SelectedIndex);
+
+            //if (Hero gets removes)
+                //lstHeroes.DataSource = null;
+                //lstHeroes.DataSource = heroes;
+
             txtRemoveHero.Clear();
             //            if ()
             //                lblStatus.Text = "Status: hero removed successfully";
@@ -78,9 +93,28 @@ namespace ListBoxes
         private void btnUpperCase_Click(object sender, EventArgs e)
         {
 
+
+            int n = 0;
+            for (int ctr = 0x20; ctr <= 0x017F; ctr++)
+            {
+                string string1 = ((char)ctr).ToString();
+                string upperString = string1.ToUpper();
+                if (string1 != upperString)
+                {
+                    Console.Write(@"{0} (\u+{1}) --> {2} (\u+{3})         ",
+                                  string1,
+                                  Convert.ToUInt16(string1[0]).ToString("X4"),
+                                  upperString,
+                                  Convert.ToUInt16(upperString[0]).ToString("X4"));
+                    n++;
+                    if (n % 2 == 0) Console.WriteLine();
+                }
+            }
         }
         private void btnLowerCase_Click(object sender, EventArgs e)
         {
+
+
 
         }
     }
