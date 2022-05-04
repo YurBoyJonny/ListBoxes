@@ -58,36 +58,34 @@ namespace ListBoxes
         }
         private void btnRemoveAllNumbers_Click(object sender, EventArgs e)
         {
-
-
-            numbers.Remove((Int32)lstNumbers.SelectedItem);
+            for (int i = 0; i < 20; i++)
+                numbers.Remove((Int32)lstNumbers.SelectedItem);
+            int numberChosen = (Int32)lstNumbers.SelectedItem;
+            lblStatus.Text = "Status: all " + numberChosen + "'s removed";
             lstNumbers.DataSource = null;
             lstNumbers.DataSource = numbers;
-            lblStatus.Text = "Status: all " + "numberChosen" + " removed";
         }
         private void btnAddHero_Click(object sender, EventArgs e)
         {
-
-
+            heroes.Add(txtAddHero.Text);
             txtAddHero.Clear();
+            lstHeroes.DataSource = null;
+            lstHeroes.DataSource = heroes;
             lblStatus.Text = "Status: hero added";
         }
         private void btnRemoveHero_Click(object sender, EventArgs e)
         {
-
-
-            heroes.RemoveAt(lstHeroes.SelectedIndex);
-
-            //if (Hero gets removes)
-                //lstHeroes.DataSource = null;
-                //lstHeroes.DataSource = heroes;
-
+            heroes.Remove(txtRemoveHero.Text);
             txtRemoveHero.Clear();
-            //            if ()
-            //                lblStatus.Text = "Status: hero removed successfully";
+            while (heroes.Remove(txtRemoveHero.Text))
+                lblStatus.Text = "Status: hero removed successfully";
+                lstHeroes.DataSource = null;
+                lstHeroes.DataSource = heroes;
 
-            //            else if ()
-            //                lblStatus.Text = "Status: hero removal unsuccessful";
+            lblStatus.Text = "Status: hero removal unsuccessful";
+            lstHeroes.DataSource = null;
+            lstHeroes.DataSource = heroes;
+
         }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void btnUpperCase_Click(object sender, EventArgs e)
