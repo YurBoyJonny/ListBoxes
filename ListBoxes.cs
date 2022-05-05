@@ -81,39 +81,18 @@ namespace ListBoxes
                 lblStatus.Text = "Status: hero removed successfully";
                 lstHeroes.DataSource = null;
                 lstHeroes.DataSource = heroes;
-
-            lblStatus.Text = "Status: hero removal unsuccessful";
-            lstHeroes.DataSource = null;
-            lstHeroes.DataSource = heroes;
-
         }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         private void btnUpperCase_Click(object sender, EventArgs e)
         {
-
-
-            int n = 0;
-            for (int ctr = 0x20; ctr <= 0x017F; ctr++)
-            {
-                string string1 = ((char)ctr).ToString();
-                string upperString = string1.ToUpper();
-                if (string1 != upperString)
-                {
-                    Console.Write(@"{0} (\u+{1}) --> {2} (\u+{3})         ",
-                                  string1,
-                                  Convert.ToUInt16(string1[0]).ToString("X4"),
-                                  upperString,
-                                  Convert.ToUInt16(upperString[0]).ToString("X4"));
-                    n++;
-                    if (n % 2 == 0) Console.WriteLine();
-                }
-            }
+            lstHeroes.Text.ToUpper();
+            lstHeroes.DataSource = null;
+            lstHeroes.DataSource = heroes;
         }
         private void btnLowerCase_Click(object sender, EventArgs e)
         {
-
-
-
+            lstHeroes.DataSource = null;
+            lstHeroes.DataSource = heroes;
         }
     }
 }
