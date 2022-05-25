@@ -82,10 +82,17 @@ namespace ListBoxes
                 lstHeroes.DataSource = null;
                 lstHeroes.DataSource = heroes;
         }
+
+        private List<string> GetHeroes()
+        {
+            return heroes;
+        }
+
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        private void btnUpperCase_Click(object sender, EventArgs e)
+        private void btnUpperCase_Click(object sender, EventArgs e, List<string> heroes)
         {
             lstHeroes.Text.ToUpper();
+
             lstHeroes.DataSource = null;
             lstHeroes.DataSource = heroes;
         }

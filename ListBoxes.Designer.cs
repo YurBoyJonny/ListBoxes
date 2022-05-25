@@ -279,7 +279,6 @@
             this.btnUpperCase.TabIndex = 21;
             this.btnUpperCase.Text = "Upper Case";
             this.btnUpperCase.UseVisualStyleBackColor = false;
-            this.btnUpperCase.Click += new System.EventHandler(this.btnUpperCase_Click);
             // 
             // btnLowerCase
             // 
